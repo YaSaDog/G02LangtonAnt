@@ -19,7 +19,6 @@ int GetCell(byte* F, int x, int y)
     return F[y * W + x];
 }
 
-
 void InitFrame(byte* F)
 {
     int x, y;

@@ -111,6 +111,8 @@ int main(int argc, char* argv[])
     glClearColor(0.1, 0.2, 0.2, 1);
 
     glutMainLoop();
+   
     free(F);
+    free(ant);
     return 0;
 }
