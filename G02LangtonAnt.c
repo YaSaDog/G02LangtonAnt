@@ -10,7 +10,7 @@ byte fullscreen = 0;
 float Zoom = 1;
 double rasterX = -1, rasterY = -1;
 
-Ant *ant;
+Ant* ant;
 
 void PutPixel(int x, int y, int r, int g, int b)
 {
@@ -36,6 +36,7 @@ void Display(void)
     glutSwapBuffers();
     glutPostRedisplay();
 }
+
 void Keyboard(byte key, int x, int y)
 {
     switch (key)
@@ -89,11 +90,11 @@ void Keyboard(byte key, int x, int y)
 
 int main(int argc, char* argv[])
 {
-    if ((ant = malloc(sizeof(Ant))) == NULL)
+    if ((ant = (Ant*)malloc(sizeof(Ant))) == NULL)
         return;
     InitAnt(ant, W / 2, H / 2, 0, -1);
 
-    if ((F = malloc(W * H)) == NULL)
+    if ((F = (byte*)malloc(W * H)) == NULL)
         return;
     InitFrame(F);
 
@@ -102,7 +103,7 @@ int main(int argc, char* argv[])
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 
     glutInitWindowPosition(10, 10);
-    glutInitWindowSize(500, 500);
+    glutInitWindowSize(WIN_W, WIN_H);
     glutCreateWindow("Langton's Ant");
 
     glutDisplayFunc(Display);

@@ -21,12 +21,12 @@ typedef struct Ant
 
 void PutPixel(int x, int y, int r, int g, int b);
 
-void SetCell(byte *F, int x, int y, int value);
-int GetCell(byte *F, int x, int y);
+void SetCell(byte* F, int x, int y, int value);
+int GetCell(byte* F, int x, int y);
 
-void InitFrame(byte *F);
-void InitVector(MotionVector *vect, int dx, int dy);
-void InitAnt(Ant *ant, int x, int y, int dx, int dy);
+void InitFrame(byte* F);
+void InitVector(MotionVector* vect, int dx, int dy);
+void InitAnt(Ant* ant, int x, int y, int dx, int dy);
 
-void MoveAnt(Ant *ant, byte *F);
-void DrawFrame(byte *F, int antX, int antY);
+void MoveAnt(Ant* ant, byte* F);
+void DrawFrame(byte* F, int antX, int antY);

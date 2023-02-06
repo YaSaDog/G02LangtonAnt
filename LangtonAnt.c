@@ -27,21 +27,21 @@ void InitFrame(byte* F)
             F[y * W + x] = 0;
 }
 
-void InitVector(MotionVector *vect, int dx, int dy)
+void InitVector(MotionVector* vect, int dx, int dy)
 {
     vect->dx = dx;
     vect->dy = dy;
 }
 
-void InitAnt(Ant *ant, int x, int y, int dx, int dy)
+void InitAnt(Ant* ant, int x, int y, int dx, int dy)
 {
     ant->x = (x + W) % W;
     ant->y = (y + H) % H;
-    MotionVector *v = &(ant->motionVect);
+    MotionVector* v = &(ant->motionVect);
     InitVector(v, dx, dy);
 }
 
-void MoveAnt(Ant *ant, byte* F)
+void MoveAnt(Ant* ant, byte* F)
 {
     int x = ant->x, y = ant->y,
         dx = ant->motionVect.dx,
